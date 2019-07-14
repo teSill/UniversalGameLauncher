@@ -83,7 +83,6 @@
             // logoPictureBox
             // 
             this.logoPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.logoPictureBox.Image = global::UniversalGameLauncher.Properties.Resources.Placeholder_Logo_280x58;
             this.logoPictureBox.Location = new System.Drawing.Point(5, 8);
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.Size = new System.Drawing.Size(280, 58);
@@ -94,7 +93,7 @@
             // 
             this.navbarButton1.BackColor = System.Drawing.Color.Transparent;
             this.navbarButton1.FlatAppearance.BorderSize = 0;
-            this.navbarButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 100, 100, 100);
+            this.navbarButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.navbarButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.navbarButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.navbarButton1.Font = new System.Drawing.Font("Segoe UI", 15F);
@@ -123,7 +122,7 @@
             // 
             this.navbarButton4.BackColor = System.Drawing.Color.Transparent;
             this.navbarButton4.FlatAppearance.BorderSize = 0;
-            this.navbarButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 100, 100, 100);
+            this.navbarButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.navbarButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.navbarButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.navbarButton4.Font = new System.Drawing.Font("Segoe UI", 15F);
@@ -138,7 +137,7 @@
             // 
             this.navbarButton3.BackColor = System.Drawing.Color.Transparent;
             this.navbarButton3.FlatAppearance.BorderSize = 0;
-            this.navbarButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 100, 100, 100);
+            this.navbarButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.navbarButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.navbarButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.navbarButton3.Font = new System.Drawing.Font("Segoe UI", 15F);
@@ -153,7 +152,7 @@
             // 
             this.navbarButton2.BackColor = System.Drawing.Color.Transparent;
             this.navbarButton2.FlatAppearance.BorderSize = 0;
-            this.navbarButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 100, 100, 100);
+            this.navbarButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.navbarButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.navbarButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.navbarButton2.Font = new System.Drawing.Font("Segoe UI", 15F);

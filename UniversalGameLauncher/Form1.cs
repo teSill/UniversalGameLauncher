@@ -41,6 +41,7 @@ namespace UniversalGameLauncher {
         private void OnLoadApplication(object sender, EventArgs e) {
             SetUpButtonEvents();
             InitializeFiles();
+            InitializeSettings();
             InitializeVersionControl();
 
             IsReady = UpToDate;
@@ -49,7 +50,22 @@ namespace UniversalGameLauncher {
                 DownloadFile();
             }
 
+            // Make panel background semi transparent
             navbarPanel.BackColor = Color.FromArgb(25, 100, 100, 100);
+        }
+
+        private void InitializeFiles() {
+            if (!Directory.Exists(Constants.FOLDER_PATH)) {
+                Directory.CreateDirectory(Constants.FOLDER_PATH);
+            } 
+        }
+
+        private void InitializeSettings() {
+            try {
+                logoPictureBox.Load(Constants.LOGO_URL);
+            } catch {
+                MessageBox.Show("There was a problem loading the game logo from the server.", "Error");
+            }
         }
 
         private void InitializeVersionControl() {
@@ -59,12 +75,6 @@ namespace UniversalGameLauncher {
             OnlineVersion = GetOnlineVersion();
 
             Console.WriteLine("We are on version " + LocalVersion + " and the online version is " + OnlineVersion);
-        }
-
-        private void InitializeFiles() {
-            if (!Directory.Exists(Constants.FOLDER_PATH)) {
-                Directory.CreateDirectory(Constants.FOLDER_PATH);
-            } 
         }
 
         private Version GetOnlineVersion() {

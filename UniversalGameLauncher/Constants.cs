@@ -22,6 +22,7 @@ namespace UniversalGameLauncher {
         public static readonly string EXECUTABLE_PATH = Path.Combine(FOLDER_PATH, EXECUTABLE_NAME);
 
         public static readonly string VERSION_URL = "https://temsoft.io/version.txt";
+        public static readonly string LOGO_URL = "https://temsoft.io/Placeholder_Logo_280x58.png"; // Ideally around 280x58
 
         public static readonly string FIRST_DOWNLOADABLE_ITEM = "https://temsoft.io/UnityNetworking.zip";
         public static readonly string SECOND_DOWNLOADABLE_ITEM = "";
@@ -37,7 +38,6 @@ namespace UniversalGameLauncher {
         public static readonly string NAVBAR_BUTTON_3_URL = "https://youtube.com/";
         public static readonly string NAVBAR_BUTTON_4_TEXT = "Discord";
         public static readonly string NAVBAR_BUTTON_4_URL = "https://github.com/";
-
         public static readonly string[] NAVBAR_BUTTON_TEXT_ARRAY = {NAVBAR_BUTTON_1_TEXT, NAVBAR_BUTTON_2_TEXT, NAVBAR_BUTTON_3_TEXT, NAVBAR_BUTTON_4_TEXT };
 
         /// <summary>
