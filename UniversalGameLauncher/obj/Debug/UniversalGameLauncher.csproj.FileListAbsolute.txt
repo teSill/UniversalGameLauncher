@@ -1,0 +1,10 @@
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\bin\Debug\UniversalGameLauncher.exe.config
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\bin\Debug\UniversalGameLauncher.exe
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\bin\Debug\UniversalGameLauncher.pdb
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.Application.resources
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.Properties.Resources.resources
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.csproj.GenerateResource.cache
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.csproj.CoreCompileInputs.cache
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.exe
+c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.pdb
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.csprojAssemblyReference.cache
