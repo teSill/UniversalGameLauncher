@@ -63,9 +63,9 @@ namespace UniversalGameLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Fantasy_Background_1028x643 {
+        internal static System.Drawing.Bitmap cancel_12x12 {
             get {
-                object obj = ResourceManager.GetObject("Fantasy_Background_1028x643", resourceCulture);
+                object obj = ResourceManager.GetObject("cancel_12x12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace UniversalGameLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Placeholder_Logo_280x58 {
+        internal static System.Drawing.Bitmap FacebookLogo {
             get {
-                object obj = ResourceManager.GetObject("Placeholder_Logo_280x58", resourceCulture);
+                object obj = ResourceManager.GetObject("FacebookLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,29 @@ namespace UniversalGameLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Placeholder_Logo_363x75 {
+        internal static System.Drawing.Bitmap instagram {
             get {
-                object obj = ResourceManager.GetObject("Placeholder_Logo_363x75", resourceCulture);
+                object obj = ResourceManager.GetObject("instagram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimize_12x12 {
+            get {
+                object obj = ResourceManager.GetObject("minimize_12x12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TwitterLogo {
+            get {
+                object obj = ResourceManager.GetObject("TwitterLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

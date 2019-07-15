@@ -1,10 +1,15 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
+using ICSharpCode.SharpZipLib.Zip;
 
 namespace UniversalGameLauncher {
     public partial class Application : Form {
@@ -17,8 +22,13 @@ namespace UniversalGameLauncher {
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        private DownloadProgressTracker _downloadProgressTracker;
+        private WebClient _webClient;
+
         public Version LocalVersion { get { return new Version(Properties.Settings.Default.VersionText); } }
         public Version OnlineVersion { get; private set; }
+
+        private List<PatchNoteBlock> patchNoteBlocks = new List<PatchNoteBlock>();
 
         private bool _isReady;
         public bool IsReady {
@@ -28,6 +38,7 @@ namespace UniversalGameLauncher {
             set {
                 _isReady = value;
                 TogglePlayButton(value);
+                InitializeFooter();
             }
         }
 
@@ -35,46 +46,82 @@ namespace UniversalGameLauncher {
 
         public Application() {
             InitializeComponent();
-
         }
 
         private void OnLoadApplication(object sender, EventArgs e) {
-            SetUpButtonEvents();
+            InitializeConstantsSettings();
             InitializeFiles();
-            InitializeSettings();
+            InitializeImages();
+            FetchPatchNotes();
             InitializeVersionControl();
 
             IsReady = UpToDate;
 
+            _downloadProgressTracker = new DownloadProgressTracker(50, TimeSpan.FromMilliseconds(500));
+
             if (!UpToDate && Constants.AUTOMATICALLY_BEGIN_UPDATING) {
                 DownloadFile();
             }
+        }
 
-            // Make panel background semi transparent
-            navbarPanel.BackColor = Color.FromArgb(25, 100, 100, 100);
+        private void InitializeConstantsSettings() {
+            Name = Constants.GAME_TITLE;
+
+            SetUpButtonEvents();
+
+            currentVersionLabel.Visible = Constants.SHOW_VERSION_TEXT;
+
         }
 
         private void InitializeFiles() {
-            if (!Directory.Exists(Constants.FOLDER_PATH)) {
-                Directory.CreateDirectory(Constants.FOLDER_PATH);
+            if (!Directory.Exists(Constants.DESTINATION_PATH)) {
+                Directory.CreateDirectory(Constants.DESTINATION_PATH);
             } 
         }
 
-        private void InitializeSettings() {
+        private void InitializeImages() {
+            navbarPanel.BackColor = Color.FromArgb(25, 100, 100, 100); // // Make panel background semi transparent
+            closePictureBox.SizeMode = PictureBoxSizeMode.CenterImage; // Center the X icon
+            minimizePictureBox.SizeMode = PictureBoxSizeMode.CenterImage; // Center the - icon
             try {
                 logoPictureBox.Load(Constants.LOGO_URL);
+                using(WebClient webClient = new WebClient()) {
+                    using (Stream stream = webClient.OpenRead(Constants.BACKGROUND_URL)) {
+                        BackgroundImage = Image.FromStream(stream);
+                    }
+                }
             } catch {
-                MessageBox.Show("There was a problem loading the game logo from the server.", "Error");
+                MessageBox.Show("There was a problem loading game images from the server!", "Error");
+            }
+        }
+
+        private void DownloadData(string url) {
+            try{
+                 WebRequest req = WebRequest.Create("[URL here]");
+                 WebResponse response = req.GetResponse();
+                 Stream stream = response.GetResponseStream();
+                 //...
+            }
+            catch {
+                 MessageBox.Show("There was a problem downloading the file");
             }
         }
 
         private void InitializeVersionControl() {
-            currentVersionLabel.Visible = Constants.SHOW_VERSION_TEXT;
-
             currentVersionLabel.Text = Properties.Settings.Default.VersionText;
             OnlineVersion = GetOnlineVersion();
 
             Console.WriteLine("We are on version " + LocalVersion + " and the online version is " + OnlineVersion);
+        }
+
+        private void InitializeFooter() {
+            if (IsReady) {
+                updateProgressBar.Visible = false;
+                clientReadyLabel.Visible = true;
+            } else {
+                updateProgressBar.Visible = true;
+                clientReadyLabel.Visible= false;
+            }
         }
 
         private Version GetOnlineVersion() {
@@ -91,34 +138,91 @@ namespace UniversalGameLauncher {
 
         private void OnClickPlay(object sender, EventArgs e) {
             if (IsReady) {
-                Environment.Exit(0);
+                LaunchGame();
             } else {
                 DownloadFile();
             }
         }
 
         private void DownloadFile() {
-            using (WebClient webclient = new WebClient()){ 
-                webclient.DownloadProgressChanged += OnDownloadProgressChanged;
-                webclient.DownloadFileCompleted += new AsyncCompletedEventHandler(OnDownloadCompleted);
-                webclient.DownloadFileAsync (
-                    // Link to file, Path to file
-                    new System.Uri(Constants.FIRST_DOWNLOADABLE_ITEM), Constants.EXECUTABLE_PATH
-                );
+            using (_webClient = new WebClient()) { 
+                _webClient.DownloadProgressChanged += OnDownloadProgressChanged;
+                _webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(OnDownloadCompleted);
+                _webClient.DownloadFileAsync(new Uri(Constants.FIRST_DOWNLOADABLE_ITEM), Constants.ZIP_PATH);
             }
         }
 
         private void OnDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e) {
+            _downloadProgressTracker.SetProgress(e.BytesReceived, e.TotalBytesToReceive);
             updateProgressBar.Value = e.ProgressPercentage;
-            updateLabelText.Text = string.Format("Downloaded {0} of {1}", StringUtility.FormatBytes(e.BytesReceived), StringUtility.FormatBytes(e.TotalBytesToReceive));
+            updateLabelText.Text = string.Format("Downloading: {0} of {1} @ {2}", StringUtility.FormatBytes(e.BytesReceived),
+                StringUtility.FormatBytes(e.TotalBytesToReceive), _downloadProgressTracker.GetBytesPerSecondString());
+
         }
+
         private void OnDownloadCompleted(object sender, AsyncCompletedEventArgs e) {
-            updateLabelText.Text = Constants.DOWNLOAD_FINISHED_MESSAGE;
+            _downloadProgressTracker.Reset();
+            updateLabelText.Text = "Download finished - extracting...";
+
+            Extract extract = new Extract(this);
+            extract.Run();
+        }
+
+        public void SetLauncherReady() {
+            updateLabelText.Text = "";
             currentVersionLabel.Text = OnlineVersion.ToString();
             Properties.Settings.Default.VersionText = OnlineVersion.ToString();
             Properties.Settings.Default.Save();
             Console.WriteLine("Updated version. Now running on version: " + LocalVersion);
             IsReady = true;
+            if (Constants.AUTOMATICALLY_LAUNCH_GAME_AFTER_UPDATING) 
+                LaunchGame();
+        }
+
+        private void FetchPatchNotes() {
+            try {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(Constants.PATCH_NOTES_URL);
+
+               foreach(XmlNode node in doc.DocumentElement) {
+                    PatchNoteBlock block = new PatchNoteBlock();
+                    for(int i = 0; i < node.ChildNodes.Count; i++) {
+                        switch(i) {
+                            case 0:
+                                block.Title = node.ChildNodes[i].InnerText;
+                                break;
+                            case 1:
+                                block.Text = node.ChildNodes[i].InnerText;
+                                break;
+                            case 2:
+                                block.Link = node.ChildNodes[i].InnerText;
+                                break;
+                        }
+                    }
+                    patchNoteBlocks.Add(block);
+                }
+            } catch {
+                MessageBox.Show("Couldn't fetch patch notes from the server!");
+            }
+
+            Label[] patchTitleObjects = { patchTitle1, patchTitle2, patchTitle3 };
+            Label[] patchTextObjects = { patchText1, patchText2, patchText3 };
+
+            for(int i = 0; i < patchNoteBlocks.Count; i++) {
+                patchTitleObjects[i].Text = patchNoteBlocks[i].Title;
+                patchTextObjects[i].Text = patchNoteBlocks[i].Text;
+            }
+        }
+
+        private void LaunchGame() {
+            try {
+                Process.Start(Constants.GAME_EXECUTABLE_PATH);
+                Environment.Exit(0);
+            } catch {
+                IsReady = false;
+                DownloadFile();
+                MessageBox.Show("Couldn't locate the game executable! Attempting to redownload - please wait.", "Fatal Error");
+            }
         }
 
         private void TogglePlayButton(bool toggle) {
@@ -143,7 +247,7 @@ namespace UniversalGameLauncher {
         }
         
         private void SetUpButtonEvents() {
-            Button[] buttons = { navbarButton1, navbarButton2, navbarButton3, navbarButton4 };
+            Button[] buttons = { navbarButton1, navbarButton2, navbarButton3, navbarButton4, navbarButton5 };
 
             for(int i = 0; i < buttons.Length; i++) {
                 buttons[i].Click += new EventHandler(OnClickButton);
@@ -152,7 +256,7 @@ namespace UniversalGameLauncher {
         }
 
         public void OnClickButton(object sender, EventArgs e) {
-            var button = (Button) sender;
+            Button button = (Button) sender;
             switch(button.Name) {
                 case nameof(navbarButton1):
                     System.Diagnostics.Process.Start(Constants.NAVBAR_BUTTON_1_URL);
@@ -166,6 +270,58 @@ namespace UniversalGameLauncher {
                 case nameof(navbarButton4):
                     System.Diagnostics.Process.Start(Constants.NAVBAR_BUTTON_4_URL);
                     break;
+                case nameof(navbarButton5):
+                    System.Diagnostics.Process.Start(Constants.NAVBAR_BUTTON_5_URL);
+                    break;
+
+                case nameof(patchButton1):
+                    Process.Start(patchNoteBlocks[0].Link);
+                    break;
+                case nameof(patchButton2):
+                    Process.Start(patchNoteBlocks[1].Link);
+                    break;
+                case nameof(patchButton3):
+                    Process.Start(patchNoteBlocks[2].Link);
+                    break;
+            }
+        }
+
+        private void OnMouseEnterIcon(object sender, EventArgs e) {
+            var pictureBox = (PictureBox) sender;
+            pictureBox.BackColor = Color.FromArgb(50, 255, 255, 255);
+        }
+
+        private void OnMouseLeaveIcon(object sender, EventArgs e) {
+            var pictureBox = (PictureBox) sender;
+            pictureBox.BackColor = Color.FromArgb(0, 255, 255, 255);
+        }
+
+        private void minimizePictureBox_Click(object sender, EventArgs e) {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void closePictureBox_Click(object sender, EventArgs e) {
+            Environment.Exit(0);
+        }
+
+        
+
+
+
+
+
+        Bitmap renderBmp;
+        public override Image BackgroundImage {
+            get {
+                return renderBmp;
+            }
+            set {
+                Image baseImage = value;
+                
+                renderBmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+                Graphics g = Graphics.FromImage(renderBmp);
+                g.DrawImage(baseImage, 0, 0, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+                g.Dispose();
             }
         }
     }
