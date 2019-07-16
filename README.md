@@ -1,5 +1,10 @@
 # Universal Game Launcher
 
+Main features:
+- Easy to use and customize
+- Version checking/Auto updating of your game
+- Grab XML data from the server to display things like the built-in patch notes
+
 ![image_1](http://temsoft.io/launcher/Launcher_Ready.png)
 ![image_2](http://temsoft.io/launcher/Launcher_Updating.png)
 
