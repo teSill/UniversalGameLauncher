@@ -23,15 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.playButton = new System.Windows.Forms.Button();
             this.updateProgressBar = new System.Windows.Forms.ProgressBar();
             this.updateLabelText = new System.Windows.Forms.Label();
             this.currentVersionLabel = new System.Windows.Forms.Label();
             this.navbarButton2 = new System.Windows.Forms.Button();
             this.navbarPanel = new System.Windows.Forms.Panel();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.minimizePictureBox = new System.Windows.Forms.PictureBox();
             this.closePictureBox = new System.Windows.Forms.PictureBox();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.navbarButton5 = new System.Windows.Forms.Button();
             this.navbarButton4 = new System.Windows.Forms.Button();
             this.navbarButton3 = new System.Windows.Forms.Button();
@@ -51,31 +50,16 @@
             this.patchTitle3 = new System.Windows.Forms.Label();
             this.patchContainerPanel = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.playButton = new System.Windows.Forms.Button();
             this.navbarPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.patchPanel1.SuspendLayout();
             this.patchPanel2.SuspendLayout();
             this.patchPanel3.SuspendLayout();
             this.patchContainerPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // playButton
-            // 
-            this.playButton.BackColor = System.Drawing.SystemColors.Highlight;
-            this.playButton.FlatAppearance.BorderSize = 0;
-            this.playButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.playButton.Font = new System.Drawing.Font("Segoe UI", 25.25F, System.Drawing.FontStyle.Bold);
-            this.playButton.Location = new System.Drawing.Point(825, 571);
-            this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(191, 60);
-            this.playButton.TabIndex = 0;
-            this.playButton.TabStop = false;
-            this.playButton.Text = "Play";
-            this.playButton.UseVisualStyleBackColor = false;
-            this.playButton.Click += new System.EventHandler(this.OnClickPlay);
             // 
             // updateProgressBar
             // 
@@ -129,9 +113,9 @@
             // 
             this.navbarPanel.BackColor = System.Drawing.Color.Transparent;
             this.navbarPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.navbarPanel.Controls.Add(this.logoPictureBox);
             this.navbarPanel.Controls.Add(this.minimizePictureBox);
             this.navbarPanel.Controls.Add(this.closePictureBox);
-            this.navbarPanel.Controls.Add(this.logoPictureBox);
             this.navbarPanel.Controls.Add(this.navbarButton5);
             this.navbarPanel.Controls.Add(this.navbarButton4);
             this.navbarPanel.Controls.Add(this.navbarButton3);
@@ -141,6 +125,15 @@
             this.navbarPanel.Name = "navbarPanel";
             this.navbarPanel.Size = new System.Drawing.Size(1028, 75);
             this.navbarPanel.TabIndex = 0;
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.logoPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(283, 75);
+            this.logoPictureBox.TabIndex = 2;
+            this.logoPictureBox.TabStop = false;
             // 
             // minimizePictureBox
             // 
@@ -170,15 +163,6 @@
             this.closePictureBox.MouseEnter += new System.EventHandler(this.OnMouseEnterIcon);
             this.closePictureBox.MouseLeave += new System.EventHandler(this.OnMouseLeaveIcon);
             // 
-            // logoPictureBox
-            // 
-            this.logoPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.logoPictureBox.Location = new System.Drawing.Point(5, 8);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(280, 58);
-            this.logoPictureBox.TabIndex = 0;
-            this.logoPictureBox.TabStop = false;
-            // 
             // navbarButton5
             // 
             this.navbarButton5.BackColor = System.Drawing.Color.Transparent;
@@ -194,7 +178,7 @@
             this.navbarButton5.TabIndex = 0;
             this.navbarButton5.TabStop = false;
             this.navbarButton5.Text = "Discord";
-            this.navbarButton5.UseVisualStyleBackColor = true;
+            this.navbarButton5.UseVisualStyleBackColor = false;
             // 
             // navbarButton4
             // 
@@ -228,7 +212,7 @@
             this.navbarButton3.TabIndex = 0;
             this.navbarButton3.TabStop = false;
             this.navbarButton3.Text = "Community";
-            this.navbarButton3.UseVisualStyleBackColor = true;
+            this.navbarButton3.UseVisualStyleBackColor = false;
             // 
             // navbarButton1
             // 
@@ -279,9 +263,6 @@
             this.patchText1.Name = "patchText1";
             this.patchText1.Size = new System.Drawing.Size(195, 216);
             this.patchText1.TabIndex = 3;
-            this.patchText1.Text = "- Cool update\r\n- Wow\r\n- So many new features\r\n- Even more bugs squashed\r\n- This i" +
-    "s great\r\n- Jmoi mother is also\r\n- Thanks for reading my patch notes\r\n- BBWP\r\n..." +
-    "";
             // 
             // patchButton1
             // 
@@ -331,9 +312,6 @@
             this.patchText2.Name = "patchText2";
             this.patchText2.Size = new System.Drawing.Size(195, 216);
             this.patchText2.TabIndex = 3;
-            this.patchText2.Text = "- Cool update\r\n- Wow\r\n- So many new features\r\n- Even more bugs squashed\r\n- This i" +
-    "s great\r\n- Jmoi mother is also\r\n- Thanks for reading my patch notes\r\n- BBWP\r\n..." +
-    "";
             // 
             // patchButton2
             // 
@@ -383,15 +361,12 @@
             this.patchText3.Name = "patchText3";
             this.patchText3.Size = new System.Drawing.Size(195, 216);
             this.patchText3.TabIndex = 3;
-            this.patchText3.Text = "- Cool update\r\n- Wow\r\n- So many new features\r\n- Even more bugs squashed\r\n- This i" +
-    "s great\r\n- Jmoi mother is also\r\n- Thanks for reading my patch notes\r\n- BBWP\r\n..." +
-    "";
             // 
             // patchButton3
             // 
             this.patchButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.patchButton3.FlatAppearance.BorderSize = 0;
             this.patchButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.patchButton3.FlatAppearance.BorderSize = 0;
             this.patchButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patchButton3.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.patchButton3.Location = new System.Drawing.Point(0, 253);
@@ -421,7 +396,7 @@
             this.patchContainerPanel.Controls.Add(this.patchPanel2);
             this.patchContainerPanel.Controls.Add(this.patchPanel1);
             this.patchContainerPanel.Controls.Add(this.patchPanel3);
-            this.patchContainerPanel.Location = new System.Drawing.Point(41, 101);
+            this.patchContainerPanel.Location = new System.Drawing.Point(144, 106);
             this.patchContainerPanel.Name = "patchContainerPanel";
             this.patchContainerPanel.Size = new System.Drawing.Size(717, 397);
             this.patchContainerPanel.TabIndex = 4;
@@ -436,6 +411,22 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Patch Notes";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // playButton
+            // 
+            this.playButton.BackColor = System.Drawing.SystemColors.Highlight;
+            this.playButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.playButton.FlatAppearance.BorderSize = 0;
+            this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playButton.Font = new System.Drawing.Font("Segoe UI", 25.25F, System.Drawing.FontStyle.Bold);
+            this.playButton.Location = new System.Drawing.Point(825, 571);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(191, 60);
+            this.playButton.TabIndex = 0;
+            this.playButton.TabStop = false;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = false;
+            this.playButton.Click += new System.EventHandler(this.OnClickPlay);
             // 
             // Application
             // 
@@ -452,19 +443,20 @@
             this.Controls.Add(this.updateLabelText);
             this.Controls.Add(this.updateProgressBar);
             this.Controls.Add(this.playButton);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Application";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Universal Game Launcher";
-            this.TopMost = true;
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.SandyBrown;
             this.Load += new System.EventHandler(this.OnLoadApplication);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Application_MouseDown);
             this.navbarPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.patchPanel1.ResumeLayout(false);
             this.patchPanel2.ResumeLayout(false);
             this.patchPanel3.ResumeLayout(false);
@@ -480,7 +472,6 @@
         private System.Windows.Forms.ProgressBar updateProgressBar;
         private System.Windows.Forms.Label updateLabelText;
         private System.Windows.Forms.Label currentVersionLabel;
-        private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Button navbarButton2;
         private System.Windows.Forms.Button navbarButton5;
         private System.Windows.Forms.Button navbarButton4;
@@ -504,6 +495,7 @@
         private System.Windows.Forms.Label patchTitle3;
         private System.Windows.Forms.Panel patchContainerPanel;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox logoPictureBox;
     }
 }
 

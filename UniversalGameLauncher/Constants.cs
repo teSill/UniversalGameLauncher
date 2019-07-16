@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UniversalGameLauncher {
-    class Constants {
+    class Constants : Application {
 
         /// <summary>
         /// Core game info
         /// </summary>
-        public static readonly string GAME_TITLE = "BulletLifeMP";
+        public static readonly string GAME_TITLE = "TemsoftAutoClicker";
+        public static readonly string LAUNCHER_NAME = "Temsoft Launcher";
 
         /// <summary>
         /// Paths & urls
@@ -21,12 +22,11 @@ namespace UniversalGameLauncher {
         public static readonly string GAME_EXECUTABLE_PATH = Path.Combine(DESTINATION_PATH, GAME_TITLE + ".exe");
 
         public static readonly string VERSION_URL = "https://temsoft.io/version.txt";
-        public static readonly string LOGO_URL = "https://temsoft.io/Placeholder_Logo_280x58.png"; // Ideally around 280x58
-        public static readonly string BACKGROUND_URL = "https://temsoft.io/temsoft_assets/Fantasy_Background_1028x643.jpg";
+        public static readonly string APPLICATION_ICON_URL = "https://temsoft.io/temsoft_assets/temsoft_logo_ico.ico"; // Needs to be .ico
+        public static readonly string LOGO_URL = "https://temsoft.io/temsoft_assets/Placeholder_Logo_White_280x58.png"; // Ideally around 283x75
+        public static readonly string BACKGROUND_URL = "https://temsoft.io/temsoft_assets/fantasy-3077928_1280.jpg";
         public static readonly string PATCH_NOTES_URL = "https://temsoft.io/temsoft_assets/updates.xml";
-        
-        public static readonly string FIRST_DOWNLOADABLE_ITEM = "https://temsoft.io/BLMP_Client.zip";
-        public static readonly string SECOND_DOWNLOADABLE_ITEM = "";
+        public static readonly string CLIENT_DOWNLOAD_URL = "https://temsoft.io/temsoft_assets/TemsoftAutoClicker.zip";
 
         /// <summary>
         /// Navigation bar buttons
@@ -41,12 +41,10 @@ namespace UniversalGameLauncher {
         public static readonly string NAVBAR_BUTTON_4_URL = "https://github.com/";
         public static readonly string NAVBAR_BUTTON_5_TEXT = "Discord";
         public static readonly string NAVBAR_BUTTON_5_URL = "https://github.com/";
-        public static readonly string[] NAVBAR_BUTTON_TEXT_ARRAY = {NAVBAR_BUTTON_1_TEXT, NAVBAR_BUTTON_2_TEXT, NAVBAR_BUTTON_3_TEXT, NAVBAR_BUTTON_4_TEXT, NAVBAR_BUTTON_5_TEXT };
 
-        /// <summary>
-        /// Messages & text
-        /// </summary>
-        public static readonly string DOWNLOAD_FINISHED_MESSAGE = "Download finished! You can now play the game.";
+        // Modify this array if you're adding or removing a button
+        public static readonly string[] NAVBAR_BUTTON_TEXT_ARRAY = {NAVBAR_BUTTON_1_TEXT, NAVBAR_BUTTON_2_TEXT, NAVBAR_BUTTON_3_TEXT,
+                                                                    NAVBAR_BUTTON_4_TEXT, NAVBAR_BUTTON_5_TEXT };
 
         /// <summary>
         /// Settings
@@ -54,6 +52,7 @@ namespace UniversalGameLauncher {
         public static bool SHOW_VERSION_TEXT = true;
         public static bool AUTOMATICALLY_BEGIN_UPDATING = false;
         public static bool AUTOMATICALLY_LAUNCH_GAME_AFTER_UPDATING = false;
+        public static bool SHOW_ERROR_BOX_IF_PATCH_NOTES_DOWNLOAD_FAILS = true;
 
     }
 }

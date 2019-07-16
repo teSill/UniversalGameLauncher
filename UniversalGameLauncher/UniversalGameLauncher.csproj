@@ -65,7 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
+    <Compile Include="Constants.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DownloadProgressTracker.cs" />
     <Compile Include="Extract.cs" />
     <Compile Include="Form1.cs">
@@ -74,7 +76,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hasher.cs" />
+    <Compile Include="NativeWinAPI.cs" />
     <Compile Include="PatchNoteBlock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TwitterLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playbuttontest.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
