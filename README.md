@@ -13,10 +13,10 @@ Everything that you need to modify to get the launcher working with your setting
 2. Set up the path for your game if you'd like. By default, the data gets saved into your home directory in a folder by the name of "GAME_TITLE".
 
 3. Let's now upload the necessary files to get everything up and running:
-  - Pack your client along with whatever else files are necessary for the client to run into a ZIP file.
-  - Create a text file called "version.txt" and enter the number "1.0.0.0" (or similar) into it. That's it. 
-  - Lastly, the XML file for our patch notes. Download or copy the contents from https://temsoft.io/temsoft_assets/updates.xml and modify the text to you're liking.
-  - Although not required to run, now might be a good time to grab your desired logo, icon and background for the launcher as well.
+3.1. Pack your client along with whatever else files are necessary for the client to run into a ZIP file.
+3.2. Create a text file called "version.txt" and enter the number "1.0.0.0" (or similar) into it. That's it. 
+3.3. Lastly, the XML file for our patch notes. Download or copy the contents from https://temsoft.io/temsoft_assets/updates.xml and modify the text to you're liking.
+3.4. Although not required to run, now might be a good time to grab your desired logo, icon and background for the launcher as well.
 
 4. Now upload these items onto a host of your choosing. Ideally one that you know will keep the files up and alive.
 
