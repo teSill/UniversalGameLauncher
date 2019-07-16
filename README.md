@@ -14,7 +14,7 @@ Everything that you need to modify to get the launcher working with your setting
 
 3. Let's now upload the necessary files to get everything up and running:
 
-3.1. Pack your client along with whatever else files are necessary for the client to run into a ZIP file.
+3.1. Pack your client along with whatever else files are necessary for the client to run into a ZIP file. Make sure that the client you want the launcher to run shares the name of "GAME_TITLE" in Constants.cs
 
 3.2. Create a text file called "version.txt" and enter the number "1.0.0.0" (or similar) into it. That's it. 
 
