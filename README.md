@@ -33,7 +33,7 @@ Everything that you need to modify to get the launcher working with your setting
 
 4. Now upload these items onto a host of your choosing. Ideally one that you know will keep the files up and alive.
 
-5. Next, you'll want to add the URLs of your recently uploaded items. This should be pretty self-explanatory.
+5. Next, you'll want to add the URLs of your recently uploaded items. This should be pretty self-explanatory, but make sure that the file extensions are correct.
 
 6. Now we should arrive at the navigation bar buttons. Give them the names and links that you wish.
 
@@ -46,7 +46,7 @@ Everything that you need to modify to get the launcher working with your setting
 The application's version will start at 1.0.0.0, as should the text file's value that you uploaded earlier. When you upload a new version of your game and want the launcher to prompt an update, all you have to do is raise the value of the number in your "version.txt" file. 
 This will create a mismatch between the launcher's local version and the version you're hosting on your server, and the launcher will prompt to re-download your game the next time it's ran.
 
-This might also be a good time to update your updates.xml file with the latest patch notes. 
+This might also be a good time to update your updates.xml file with the latest patch notes, if that's something you're keeping track of.
 
 --- AUTO UPDATING ---
 
