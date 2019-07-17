@@ -27,7 +27,7 @@ Everything that you need to modify to get the launcher working with your setting
 
 3.2. Create a text file called "version.txt" and enter the number "1.0.0.0" (or similar) into it. That's it. 
 
-3.3. Lastly, the XML file for our patch notes. Download or copy the contents from https://temsoft.io/temsoft_assets/updates.xml and modify the text to you're liking.
+3.3. Lastly, the XML file for our patch notes. Download or copy the contents from https://temsoft.io/temsoft_assets/updates.xml and modify the text to your liking.
 
 3.4. Although not required to run, now might be a good time to grab your desired logo, icon and background for the launcher as well.
 
