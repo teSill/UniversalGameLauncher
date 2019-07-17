@@ -23,7 +23,7 @@ Everything that you need to modify to get the launcher working with your setting
 
 3. Let's now upload the necessary files to get everything up and running:
 
-3.1. Pack your client along with whatever else files are necessary for the client to run into a ZIP file. Make sure that the client you want the launcher to run shares the name of "GAME_TITLE" in Constants.cs
+3.1. Pack your client along with whatever else files are necessary for the client to run into a ZIP file. Make sure that the client you want the launcher to run shares the value of "GAME_TITLE" in Constants.cs
 
 3.2. Create a text file called "version.txt" and enter the number "1.0.0.0" (or similar) into it. That's it. 
 
@@ -51,4 +51,4 @@ This might also be a good time to update your updates.xml file with the latest p
 --- AUTO UPDATING ---
 
 
-For support, inquiries and anything else, you can contact me at https://temsoft.io
+For support, inquiries or anything else, you can contact me at https://temsoft.io
