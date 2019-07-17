@@ -13,7 +13,7 @@ Main features:
 
 
 
-Instructions:
+Setting it up:
 
 Everything that you need to modify to get the launcher working with your settings, is in the "Constants.cs" class. Assuming that you've already downloaded and opened the solution (UniversalGameLauncher.sln), go ahead and open up Constants.cs now.
 
