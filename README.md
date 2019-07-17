@@ -3,7 +3,7 @@
 Main features:
 - Easy to use and customize
 - Version checking/Auto updating of your game
-- Grab XML data from the server to display things like the built-in patch 
+- Grab XML data from the server to display things like the built-in patch notes
 
 
 
