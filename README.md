@@ -1,6 +1,6 @@
 # Universal Game Launcher
 
-Main features:
+## Key features:
 - Easy to use and customize
 - Version checking/Auto updating of your game
 - Grab XML data from the server to display things like the built-in patch notes
@@ -13,7 +13,7 @@ Main features:
 
 
 
-Setting it up:
+## Setting it up:
 
 Everything that you need to modify to get the launcher working with your settings, is in the "Constants.cs" class. Assuming that you've already downloaded and opened the solution (UniversalGameLauncher.sln), go ahead and open up Constants.cs now.
 
@@ -41,14 +41,14 @@ Everything that you need to modify to get the launcher working with your setting
 
 8. Once you're done editing the class, hit the "Build" button at the top and open up "Configuration Manager". On the first dropdown list, select "Release" instead of "Debug". Close the window. Click "Build" again, and then "Build solution". Done. Your updated launcher is now in \bin\release\.
 
---- AUTO UPDATING ---
+## Auto Updating
 
 The application's version will start at 1.0.0.0, as should the text file's value that you uploaded earlier. When you upload a new version of your game and want the launcher to prompt an update, all you have to do is raise the value of the number in your "version.txt" file. 
 This will create a mismatch between the launcher's local version and the version you're hosting on your server, and the launcher will prompt to re-download your game the next time it's ran.
 
 This might also be a good time to update your updates.xml file with the latest patch notes, if that's something you're keeping track of.
 
---- AUTO UPDATING ---
 
+## Support
 
 For support, inquiries or anything else, you can contact me at https://temsoft.io
