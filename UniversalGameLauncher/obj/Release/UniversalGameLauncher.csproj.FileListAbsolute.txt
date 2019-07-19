@@ -12,3 +12,17 @@ C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLaunc
 C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\bin\Release\ICSharpCode.SharpZipLib.xml
 C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.csproj.CopyComplete
 C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.csprojAssemblyReference.cache
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\bin\Release\UniversalGameLauncher.exe.config
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\bin\Release\UniversalGameLauncher.exe
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\bin\Release\UniversalGameLauncher.pdb
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\bin\Release\ICSharpCode.SharpZipLib.pdb
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\bin\Release\ICSharpCode.SharpZipLib.xml
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.csprojAssemblyReference.cache
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.Application.resources
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.Properties.Resources.resources
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.csproj.GenerateResource.cache
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.csproj.CoreCompileInputs.cache
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.csproj.CopyComplete
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.exe
+C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\GameLauncherRepository\UniversalGameLauncher\UniversalGameLauncher\obj\Release\UniversalGameLauncher.pdb
