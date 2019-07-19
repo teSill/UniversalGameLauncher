@@ -15,6 +15,8 @@
 
 ## Setting it up:
 
+The application is written in Visual Studio 2017.
+
 Everything that you need to modify to get the launcher working with your settings, is in the "Constants.cs" class. Assuming that you've already downloaded and opened the solution (UniversalGameLauncher.sln), go ahead and open up Constants.cs now.
 
 1. Let's start by entering your game's name in the "GAME_TITLE" field. This should be the name of your executable game client.
